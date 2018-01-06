@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[[= model.title ]]</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jzy">
+    <meta name="robots" content="all">
+    <!-- iphone添加到桌面全屏设置 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+    <h1 class="welcome_wrapper"></h1>
+
+    <script type="text/template" id="welcom_template">
+        <span>{{= it.title }}</span>
+    </script>
+
+    <script src="src/common/js/jquery-1.11.3.min.js"></script>
+    <script src="src/common/js/common.js"></script>
+    <script src="src/common/js/doT.min.js"></script>
+    <script src="src/common/js/ajax_common.js"></script>
+    <script src="src/common/js/dom_append.js"></script>
+
+    <script src="dist/main.min.js"></script>
+</body>
+</html>
