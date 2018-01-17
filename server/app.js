@@ -46,6 +46,7 @@ app.set('filespath', path.join(app.get('uploadpath'), 'files'));
  */
 app.use('/', require('../client.js'));
 
+
 /**
  * 处理后台路由 - 中间件
  */
@@ -55,6 +56,13 @@ app.use('/', require('./controllers/sessionverify'));
 // 静态资源服务
 app.use('/admin', express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// 处理上传图片的跨域请求
+app.use('/upload', function(req, res, next){
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+	next();
+});
 
 // 同步载入所有路由控制器，返回文件路径数组
 var routes = glob.sync('./controllers/**/*.js', {cwd: __dirname});
